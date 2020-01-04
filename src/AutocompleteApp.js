@@ -15,7 +15,7 @@ export class AutocompleteApp extends Component {
   onChange = async(event) => {
     const userInput = event.currentTarget.value;
 
-    const response = await fetch(`/api/books`);
+    const response = await fetch(`/api/books?query=${userInput}`);
     const {result} = await response.json();
 
     this.setState({
