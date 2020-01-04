@@ -10,6 +10,10 @@ function send404(res) {
   res.end();
 }
 
+function filterBooks(start, end) {
+  return books.data.slice(start, end);
+}
+
 const server = http.createServer((req, res) => {
   if (req.method !== 'GET') {
     send404(res);
@@ -39,7 +43,7 @@ const server = http.createServer((req, res) => {
 
   const start = Number.parseInt(theURL.query && theURL.query.start, 10) || 0;
   const end = start + count;
-  const result = books.data.slice(start, end);
+  const result = filterBooks(start, end);
   const moreResults = end < books.data.length;
 
   res.writeHead(200, {
