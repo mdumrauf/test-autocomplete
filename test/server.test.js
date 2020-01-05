@@ -45,4 +45,20 @@ describe('/api/books', () => {
     done();
   });
 
+  it('should return 404 NOT FOUND when call with verb other than GET', async (done) => {
+    const response = await request(app).post('/api/books');
+
+    expect(response.status).toBe(404);
+
+    done();
+  });
+
+  it('should return 404 NOT FOUND with non-existent route ', async (done) => {
+    const response = await request(app).get('/api/foo');
+
+    expect(response.status).toBe(404);
+
+    done();
+  });
+
 });
