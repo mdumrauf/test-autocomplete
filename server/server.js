@@ -1,9 +1,9 @@
 const http = require('http');
 const url = require('url')
-const {filter, includes, toLower} = require('lodash');
+const {filter, includes, isEmpty, split, startsWith, toLower} = require('lodash');
 
-const {findAll} = require('./books');
-const books = findAll();
+const BooksRepository = require('./booksRepository');
+const books = BooksRepository.findAll();
 
 const PAGE_SIZE = 50;
 
@@ -32,8 +32,24 @@ const server = http.createServer((req, res) => {
     }
   } = theURL;
 
-  if (pathname !== '/api/books') {
+  if (!startsWith(pathname, '/api/books')) {
     send404(res);
+    return;
+  }
+
+  const bookId = split(pathname, '/api/books/')[1];
+
+  if (!isEmpty(bookId)) {
+    const book = BooksRepository.findById(bookId);
+
+    if (isEmpty(book)) {
+      send404(res);
+      return;
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+    });
+    res.end(JSON.stringify(book));
     return;
   }
 

@@ -24,9 +24,18 @@ export class AutocompleteApp extends Component {
     });
   };
 
+  onClick = e => {
+    this.setState({
+      books: [],
+      userInput: e.currentTarget.innerText
+    });
+    this.props.history.push(`/books/${e.target.id}`);
+  };
+
   render() {
     const {
       onChange,
+      onClick,
       state: {
         books,
         userInput
@@ -39,7 +48,12 @@ export class AutocompleteApp extends Component {
       suggestionsList = (
         map(books, book => {
           return (
-            <li key={book.id}>{book.title}</li>
+            <li
+              id={book.id}
+              key={book.id}
+              onClick={onClick}>
+              {book.title}
+            </li>
           );
         })
       )
