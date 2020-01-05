@@ -22,13 +22,21 @@ const server = http.createServer((req, res) => {
   }
 
   const theURL = url.parse(req.url, true);
-  if (theURL.pathname !== '/api/books') {
+  const {
+    pathname,
+    query: {
+      count,
+      start
+    }
+  } = theURL;
+
+  if (pathname !== '/api/books') {
     send404(res);
     return;
   }
 
-  const count = Number.parseInt(theURL.query && theURL.query.count, 10) || PAGE_SIZE;
-  if (count < 0 || count > PAGE_SIZE) {
+  const size = Number.parseInt(count, 10) || PAGE_SIZE;
+  if (size < 0 || size > PAGE_SIZE) {
     res.statusCode = 400;
     res.end(JSON.stringify({
     info: {},
@@ -42,9 +50,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  const start = Number.parseInt(theURL.query && theURL.query.start, 10) || 0;
-  const end = start + count;
-  const result = filterBooks(start, end);
+  const offset = Number.parseInt(start, 10) || 0;
+  const end = offset + size;
+  const result = filterBooks(offset, end);
   const moreResults = end < books.data.length;
 
   res.writeHead(200, {
