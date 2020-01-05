@@ -1,0 +1,130 @@
+{
+    "info": {
+        "paging": {
+            "count": 6,
+            "total": 6,
+            "moreResults": false
+        }
+    },
+    "status": {
+        "statusMsg": "Ok",
+        "statusDetails": {},
+        "statusCode": "HTTPOk"
+    },
+    "result": [
+        {
+            "copyrightYear": 2009,
+            "subtitle": "",
+            "edition": "12th edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "The Micro Economy Today",
+            "thumbnail": "thumbnails/book-12.jpeg",
+            "attribution": "Bradley R. Schiller",
+            "description": "Need Schiller Micro for your course? The Micro Economy Today features high resolution graphs, interactive quizzes and beautiful graphics. Plus it’s got everything the book has, right down to the page numbers. So you’ll stand out while you fit right in.",
+            "price": 119.99,
+            "chapterPrice": 6.99,
+            "publisher": "McGraw-Hill",
+            "url": "https://www.inkling.com/store/book/the-micro-economy-today-bradley-schiller-12th/",
+            "id": "book-id-2"
+        },
+        {
+            "copyrightYear": 2009,
+            "subtitle": "",
+            "edition": "12th edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "The Macro Economy Today",
+            "thumbnail": "thumbnails/book-02.jpeg",
+            "attribution": "Bradley R. Schiller",
+            "description": "Need Schiller Macro for your course? The Macro Economy Today features high resolution graphs, interactive quizzes and beautiful graphics. Plus it’s got everything the book has, right down to the page numbers, minus the weight. So you’ll stand out while you fit right in.\n",
+            "price": 119.99,
+            "chapterPrice": 6.99,
+            "publisher": "McGraw-Hill",
+            "url": "https://www.inkling.com/store/book/the-macro-economy-today-bradley-schiller-12th/",
+            "id": "book-id-11"
+        },
+        {
+            "copyrightYear": 2009,
+            "subtitle": "",
+            "edition": "12th edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "The Economy Today",
+            "thumbnail": "thumbnails/book-01.jpeg",
+            "attribution": "Bradley R. Schiller",
+            "description": "Need Schiller for your course? The Economy Today features high resolution graphs, interactive quizzes and beautiful graphics. Plus it’s got everything the book has, right down to the page numbers, minus the weight. So you’ll stand out while you fit right in.",
+            "price": 159.99,
+            "chapterPrice": 6.99,
+            "publisher": "McGraw-Hill",
+            "url": "https://www.inkling.com/store/book/the-economy-today-bradley-schiller-12th/",
+            "id": "book-id-12"
+        },
+        {
+            "copyrightYear": 2008,
+            "subtitle": "",
+            "edition": "7th edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "Microeconomics",
+            "thumbnail": "thumbnails/book-19.jpeg",
+            "attribution": "Robert Pindyck and Daniel Rubinfeld",
+            "description": "Need Pindyck and Rubinfeld’s Microeconomics for class? Over 100 real-world examples are even more vivid in the Inkling version with video case studies embedded in the text and zoomable graphs. Before the exam, extensive self-study tools ensure that you're ahead of the curve. Go ahead—supply your demand for a better textbook.",
+            "price": 149.99,
+            "chapterPrice": 8.99,
+            "publisher": "Pearson",
+            "url": "https://www.inkling.com/store/book/microeconomics-robert-pindyck-13th/",
+            "id": "book-id-32"
+        },
+        {
+            "copyrightYear": 2008,
+            "subtitle": "",
+            "edition": "2nd edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "Essentials of Economics",
+            "thumbnail": "thumbnails/book-05.jpeg",
+            "attribution": "R. Glenn Hubbard and Anthony Patrick O'Brien",
+            "description": "Need Hubbard’s Essentials of Economics for class? On Inkling’s version, figures pop with interactive elements, while exclusive videos are ready to watch at just a tap. Before the exam, extensive self-study tools ensure that you're ahead of the curve. Go ahead—supply your demand for a better textbook.",
+            "price": 129.99,
+            "chapterPrice": 7.99,
+            "publisher": "Pearson",
+            "url": "https://www.inkling.com/store/book/essentials-economics-hubbard-patrick-obrien-2nd/",
+            "id": "book-id-33"
+        },
+        {
+            "copyrightYear": 2011,
+            "subtitle": "Policy and Practice",
+            "edition": "1st edition",
+            "briefDescription": "",
+            "primaryCategory": "Economics",
+            "subCategories": [
+                "Business & Finance"
+            ],
+            "title": "Macroeconomics",
+            "thumbnail": "thumbnails/book-00.jpeg",
+            "attribution": "Frederic S. Mishkin",
+            "description": "Need Mishkin’s Macroeconomics for class? Now, your textbook is as dynamic as the world of macroeconomics. Before the exam, tools like a smart search engine and linked glossary terms and footnotes help you get ahead of the curve. Go ahead—supply your demand for a better textbook.",
+            "price": 149.99,
+            "chapterPrice": 7.99,
+            "publisher": "Pearson",
+            "url": "https://www.inkling.com/store/book/macroeconomics-frederic-mishkin-1st/",
+            "id": "book-id-36"
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 const http = require('http');
 const url = require('url')
+const {filter, includes, toLower} = require('lodash');
 
 const {findAll} = require('./books');
 const books = findAll();
@@ -11,8 +12,8 @@ function send404(res) {
   res.end();
 }
 
-function filterBooks(start, end) {
-  return books.data.slice(start, end);
+function filterBooks(books, query) {
+  return filter(books.data, (book) => includes(toLower(book.title), toLower(query)));
 }
 
 const server = http.createServer((req, res) => {
@@ -26,6 +27,7 @@ const server = http.createServer((req, res) => {
     pathname,
     query: {
       count,
+      query,
       start
     }
   } = theURL;
@@ -54,8 +56,9 @@ const server = http.createServer((req, res) => {
 
   const offset = Number.parseInt(start, 10) || 0;
   const end = offset + size;
-  const result = filterBooks(offset, end);
-  const moreResults = end < books.data.length;
+  const filtered = filterBooks(books, query);
+  const result = filtered.slice(start, end)
+  const moreResults = end < filtered.length;
 
   res.writeHead(200, {
     'Content-Type': 'application/json',
@@ -64,7 +67,7 @@ const server = http.createServer((req, res) => {
     info: {
       paging: {
         count: result.length,
-        total: books.data.length,
+        total: filtered.length,
         pageNext: moreResults ? end : undefined,
         moreResults,
       },
