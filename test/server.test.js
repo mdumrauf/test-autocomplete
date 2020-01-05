@@ -2,6 +2,7 @@ const request = require('supertest')
 let app;
 
 const booksResponse = require('./booksResponse');
+const booksResponseWithOffset = require('./booksResponseWithOffset');
 
 jest.mock('../server/books', () => ({
   findAll: jest.fn().mockImplementation(() => {
@@ -24,6 +25,15 @@ describe('/api/books', () => {
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual(booksResponse);
+
+    done();
+  });
+
+  it('should return 200 OK with start param equal to half of the total count', async (done) => {
+    const response = await request(app).get('/api/books?start=50');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(booksResponseWithOffset);
 
     done();
   });
