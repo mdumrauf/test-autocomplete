@@ -2,8 +2,8 @@ const http = require('http');
 const url = require('url')
 const {filter, includes, toLower} = require('lodash');
 
-const {findAll} = require('./books');
-const books = findAll();
+const BooksRepository = require('./booksRepository');
+const books = BooksRepository.findAll();
 
 const PAGE_SIZE = 50;
 
