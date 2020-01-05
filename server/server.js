@@ -37,7 +37,9 @@ const server = http.createServer((req, res) => {
 
   const size = Number.parseInt(count, 10) || PAGE_SIZE;
   if (size < 0 || size > PAGE_SIZE) {
-    res.statusCode = 400;
+    res.writeHead(400, {
+      'Content-Type': 'application/json',
+    });
     res.end(JSON.stringify({
     info: {},
     status: {
