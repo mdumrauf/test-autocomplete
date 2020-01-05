@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import {withRouter} from 'react-router-dom';
 import {isEmpty, map} from 'lodash';
 import './AutocompleteApp.css';
 
@@ -7,6 +10,10 @@ const UP_KEY = 38;
 const DOWN_KEY = 40;
 
 export class AutocompleteApp extends Component {
+
+  static propTypes = {
+    location: PropTypes.object.isRequired
+  }
 
   constructor(props) {
     super(props);
@@ -121,4 +128,4 @@ export class AutocompleteApp extends Component {
   }
 }
 
-export default AutocompleteApp;
+export default withRouter(AutocompleteApp);
