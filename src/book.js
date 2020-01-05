@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import {withRouter} from 'react-router-dom';
 
 class Book extends Component {
 
@@ -7,6 +8,7 @@ class Book extends Component {
     this.state = {
       book: {},
     };
+    this.navigateBack = this.navigateBack.bind(this);
   }
 
   componentDidMount = async () => {
@@ -24,8 +26,13 @@ class Book extends Component {
     });
   }
 
+  navigateBack() {
+    this.props.history.goBack();
+  }
+
   render() {
     const {
+      navigateBack,
       state: {
         book: {
           copyrightYear,
@@ -63,9 +70,10 @@ class Book extends Component {
         <li><b>Publisher</b>: {publisher}</li>
         <li><b>Copyright year</b>: {copyrightYear}</li>
       </ul>
+      <button onClick={navigateBack}>Back</button>
     </Fragment>
   }
 
 }
 
-export default Book;
+export default withRouter(Book);
