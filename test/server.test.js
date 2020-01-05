@@ -82,3 +82,25 @@ describe('/api/books', () => {
   });
 
 });
+
+describe('/api/books/:id', () => {
+
+  it('should return 200 OK with existent book ', async (done) => {
+    const response = await request(app).get('/api/books/book-id-95');
+    const book95 = require('./book-id-95');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(book95);
+
+    done();
+  });
+
+  it('should return 404 NOT FOUND with non-existent book ', async (done) => {
+    const response = await request(app).get('/api/books/42');
+
+    expect(response.status).toBe(404);
+
+    done();
+  });
+
+});
