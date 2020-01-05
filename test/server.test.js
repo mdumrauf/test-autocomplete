@@ -1,13 +1,16 @@
 const request = require('supertest')
 let app;
 
-const booksResponse = require('./booksResponse');
-const booksResponseWithOffset = require('./booksResponseWithOffset');
-const booksResponseFilteredByQuery = require('./booksResponseFilteredByQuery');
+const {
+  book95,
+  booksResponse,
+  booksResponseWithOffset,
+  booksResponseFilteredByQuery,
+ } = require('./fixtures');
 
 jest.mock('../server/books', () => ({
   findAll: jest.fn().mockImplementation(() => {
-    return require('./booksFixture');
+    return require('./fixtures/books');
   })
 }));
 
@@ -87,7 +90,6 @@ describe('/api/books/:id', () => {
 
   it('should return 200 OK with existent book ', async (done) => {
     const response = await request(app).get('/api/books/book-id-95');
-    const book95 = require('./book-id-95');
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual(book95);
