@@ -3,6 +3,7 @@ let app;
 
 const booksResponse = require('./booksResponse');
 const booksResponseWithOffset = require('./booksResponseWithOffset');
+const booksResponseFilteredByQuery = require('./booksResponseFilteredByQuery');
 
 jest.mock('../server/books', () => ({
   findAll: jest.fn().mockImplementation(() => {
@@ -34,6 +35,15 @@ describe('/api/books', () => {
 
     expect(response.status).toBe(200);
     expect(response.body).toEqual(booksResponseWithOffset);
+
+    done();
+  });
+
+  it('should return 200 OK when filtr query param is included', async (done) => {
+    const response = await request(app).get('/api/books?query=econo');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(booksResponseFilteredByQuery);
 
     done();
   });
