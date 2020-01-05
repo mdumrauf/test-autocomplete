@@ -1,4 +1,4 @@
-module.exports = {
+module.exports.findAll = () => ({
   items: 788,
   data: [
     {
@@ -14358,4 +14358,4 @@ module.exports = {
       id: 'book-id-787',
     },
   ],
-};
+});

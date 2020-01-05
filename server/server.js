@@ -1,7 +1,8 @@
 const http = require('http');
 const url = require('url')
 
-const books = require('./books.js');
+const {findAll} = require('./books');
+const books = findAll();
 
 const PAGE_SIZE = 50;
 
