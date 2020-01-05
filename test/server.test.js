@@ -28,4 +28,21 @@ describe('/api/books', () => {
     done();
   });
 
+  it('should return 400 BAD REQUEST with invalid params', async (done) => {
+    const response = await request(app).get('/api/books?count=-10');
+
+    expect(response.status).toBe(400);
+    expect(response.body).toEqual({
+      info: {},
+      status: {
+        statusMsg: `Value of count must be a positive integer less than 50; got '-10'.`,
+        statusDetails: {},
+        statusCode: 'InvalidRequest'
+      },
+      result: null,
+    });
+
+    done();
+  });
+
 });
