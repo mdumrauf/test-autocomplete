@@ -29,6 +29,7 @@ export class AutocompleteApp extends Component {
       books: [],
       userInput: e.currentTarget.innerText
     });
+    this.props.history.push(`/books/${e.target.id}`);
   };
 
   render() {
