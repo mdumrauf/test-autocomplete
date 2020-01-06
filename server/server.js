@@ -1,5 +1,5 @@
 const http = require('http');
-const url = require('url')
+const url = require('url');
 const {filter, includes, isEmpty, split, startsWith, toLower} = require('lodash');
 
 const BooksRepository = require('./booksRepository');
@@ -25,6 +25,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  // eslint-disable-next-line node/no-deprecated-api
   const theURL = url.parse(req.url, true);
   const {
     pathname,

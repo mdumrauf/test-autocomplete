@@ -1,7 +1,14 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+
 import {withRouter} from 'react-router-dom';
 
 class Book extends Component {
+
+  static propTypes = {
+    history: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired
+  }
 
   constructor(props) {
     super(props);
@@ -16,7 +23,7 @@ class Book extends Component {
       params: {
         id
       }
-    } = this.props.match
+    } = this.props.match;
 
     const response = await fetch(`/api/books/${id}`);
     const result = await response.json();

@@ -13,6 +13,7 @@ const DOWN_KEY = 40;
 export class AutocompleteApp extends Component {
 
   static propTypes = {
+    history: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired
   }
 
@@ -73,12 +74,14 @@ export class AutocompleteApp extends Component {
 
     switch (e.keyCode) {
       case ENTER_KEY:
-        const selectedBook = books[currentBookIndex];
-        this.setState({
-          currentBookIndex: 0,
-        });
-        this.selectBook(selectedBook.id, selectedBook.title);
-        break;
+        {
+          const selectedBook = books[currentBookIndex];
+          this.setState({
+            currentBookIndex: 0,
+          });
+          this.selectBook(selectedBook.id, selectedBook.title);
+          break;
+        }
       case UP_KEY:
         if (currentBookIndex === 0) {
           return;
