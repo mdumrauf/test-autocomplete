@@ -1,0 +1,38 @@
+.book {
+  width: 500px;
+  margin: 50px auto 0;
+}
+
+.book > * {
+  font-family: helvetica;
+  font-weight: 100;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+b {
+  font-weight: bold;
+}
+
+li {
+  padding: 10px 0;
+}
+
+.back-button {
+  float: right;
+}

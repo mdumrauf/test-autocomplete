@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import {withRouter} from 'react-router-dom';
+
+import './Book.css';
 
 class Book extends Component {
 
@@ -60,25 +62,35 @@ class Book extends Component {
       }
     } = this;
 
-    return <Fragment>
-      <h1>Title: {title}</h1>
-      <h2>{subtitle}</h2>
-      <div>{briefDescription}</div>
-      <img alt={briefDescription} width="100" src={`../${thumbnail}`}></img>
-      <ul>
-        <li><a href={url}><em>Buy!</em></a></li>
-        <li><b>Description</b>: {description}</li>
-        <li><b>Edition</b>: {edition}</li>
-        <li><b>Price</b>: ${price}</li>
-        <li><b>Primary</b> category: {primaryCategory}</li>
-        <li><b>Subcategories</b>: {subCategories}</li>
-        <li><b>Attribution</b>: {attribution}</li>
-        <li><b>Chapterprice</b>: {chapterPrice}</li>
-        <li><b>Publisher</b>: {publisher}</li>
-        <li><b>Copyright year</b>: {copyrightYear}</li>
-      </ul>
-      <button onClick={navigateBack}>Back</button>
-    </Fragment>
+    return (
+      <div className="book">
+        <h1>{title}</h1>
+        <h2>{subtitle}</h2>
+        <div className="column">
+            {briefDescription}
+          </div>
+        <div className="row">
+          <div className="column">
+            <img alt={briefDescription} width="150" src={`../${thumbnail}`}></img>
+          </div>
+          <div className="column">
+            {description}
+          </div>
+        </div>
+        <ul>
+          <li><a href={url}><em>Buy!</em></a></li>
+          <li><b>Edition</b>: {edition}</li>
+          <li><b>Price</b>: ${price}</li>
+          <li><b>Primary category</b>: {primaryCategory}</li>
+          <li><b>Subcategories</b>: {subCategories}</li>
+          <li><b>Attribution</b>: {attribution}</li>
+          <li><b>Chapterprice</b>: {chapterPrice}</li>
+          <li><b>Publisher</b>: {publisher}</li>
+          <li><b>Copyright year</b>: {copyrightYear}</li>
+        </ul>
+        <button className="back-button" onClick={navigateBack}>Back</button>
+      </div>
+    );
   }
 
 }
