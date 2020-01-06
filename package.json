@@ -16,7 +16,7 @@
     "start:dev-build": "react-scripts start",
     "build": "react-scripts build",
     "test": "concurrently \"npm run test:server\" \"npm run test:app\"",
-    "test:app": "react-scripts test --watchAll",
+    "test:app": "react-scripts test --watchAll=false --verbose --color",
     "test:server": "jest --verbose --color test/server.test.js",
     "test:coverage": "jest --coverage --verbose --color",
     "eject": "react-scripts eject",
